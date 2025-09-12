@@ -11,3 +11,13 @@ export const hashPassword = async (password) => {
         return res.status(500).json({ message: "Something went wrong!" });
     }
 }
+
+export const compareHashPassword = async (password, storedHashPassword) => {
+    try {
+        const isPasswordCorrect = await bcrypt.compare(password, storedHashPassword);
+        return isPasswordCorrect;
+    } catch (e) {
+        console.log(e);
+        return res.status(500).json({ message: "Something went wrong!" });
+    }
+}
