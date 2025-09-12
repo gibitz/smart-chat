@@ -12,6 +12,7 @@ export const hashPassword = async (password) => {
     }
 }
 
+// * COMPARE SENT PASSWORD WITH HASHED ONE SOTRED IN DB
 export const compareHashPassword = async (password, storedHashPassword) => {
     try {
         const isPasswordCorrect = await bcrypt.compare(password, storedHashPassword);
