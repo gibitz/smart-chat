@@ -110,7 +110,7 @@ export const checkAuth = (req, res) => {
     try {
         res.status(200).json(req.user);
     } catch (e) {
-        console.log("Error in checkAuth controller", e);
+        console.log("Error in checkAuth controller.", e);
         res.status(500).json({ message: "Something went wrong!" });
     }
 }
