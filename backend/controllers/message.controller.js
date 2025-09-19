@@ -14,7 +14,7 @@ export const getUsersSidebar = async (req, res) => {
         return res.status(500).json({ message: "Something went wrong!" });
     }
 
-}
+};
 
 export const getMessages = async (req, res) => {
     try {
@@ -24,8 +24,8 @@ export const getMessages = async (req, res) => {
         const messages = await Message.find({
             $or: [
                 { senderId: myId, receiverId: userToChatId },
-                { senderId: userToChatId, receiverId: myId }
-            ]
+                { senderId: userToChatId, receiverId: myId },
+            ],
         });
 
         return res.status(200).json(messages);
@@ -33,7 +33,7 @@ export const getMessages = async (req, res) => {
         console.log(e);
         return res.status(500).json({ message: "Something went wrong!" });
     }
-}
+};
 
 export const sendMessage = async (req, res) => {
     try {
@@ -65,4 +65,4 @@ export const sendMessage = async (req, res) => {
         console.log(e);
         return res.status(500).json({ message: "Something went wrong!" });
     }
-}
+};

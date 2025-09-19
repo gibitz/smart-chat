@@ -1,7 +1,7 @@
 import User from "../models/User.model.js";
 import { hashPassword, compareHashPassword } from "../utils/hashPassword.js";
 import { generateToken } from "../utils/generateToken.js";
-import cloudinary from "../config/cloudinary.js"
+import cloudinary from "../config/cloudinary.js";
 
 // * USER CONTROLLER FOR SIGNIN UP
 export const signup = async (req, res) => {
@@ -87,7 +87,7 @@ export const logout = (req, res) => {
         console.log(e);
         return res.status(500).json({ message: "Something went wrong!" });
     }
-}
+};
 
 // * USER CONTROLLER FOR UPDATING PROFILE PICTURE
 export const updateProfile = async (req, res) => {
@@ -104,7 +104,7 @@ export const updateProfile = async (req, res) => {
         console.log(e);
         return res.status(500).json({ message: "Something went wrong!" });
     }
-}
+};
 
 export const checkAuth = (req, res) => {
     try {
@@ -113,4 +113,4 @@ export const checkAuth = (req, res) => {
         console.log("Error in checkAuth controller.", e);
         res.status(500).json({ message: "Something went wrong!" });
     }
-}
+};

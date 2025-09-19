@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
-const opts = { timestamps: true }
+const opts = { timestamps: true };
 
 const messageSchema = new Schema(
     {
@@ -22,7 +22,7 @@ const messageSchema = new Schema(
             type: String,
         },
     }, opts
-)
+);
 
 const Message = mongoose.model("Message", messageSchema);
 

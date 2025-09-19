@@ -1,4 +1,4 @@
-import bcrypt from "bcryptjs"
+import bcrypt from "bcryptjs";
 
 // * GENERATE SALT ROUNDS THEN HASH THE PASSWORD
 export const hashPassword = async (password) => {
@@ -10,7 +10,7 @@ export const hashPassword = async (password) => {
         console.log(e);
         return res.status(500).json({ message: "Something went wrong!" });
     }
-}
+};
 
 // * COMPARE SENT PASSWORD WITH HASHED ONE SOTRED IN DB
 export const compareHashPassword = async (password, storedHashPassword) => {
@@ -21,4 +21,4 @@ export const compareHashPassword = async (password, storedHashPassword) => {
         console.log(e);
         return res.status(500).json({ message: "Something went wrong!" });
     }
-}
+};
