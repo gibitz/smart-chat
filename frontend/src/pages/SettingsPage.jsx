@@ -15,8 +15,8 @@ const SettingsPage = () => {
 
 	return (
 		<div className="min-h-svh bg-base-200">
-			<div className="space-y-5 container mx-auto px-4 pt-20 max-w-5xl">
-				<div className="flex flex-col gap-1">
+			<div className="space-y-5 container mx-auto px-4 pb-10 max-w-5xl">
+				<div className="flex flex-col gap-1 pt-20">
 					<h2 className="text-lg font-semibold">Theme</h2>
 					<p className="text-sm text-base-content/70">Choose a theme for your chat interface</p>
 				</div>
@@ -25,7 +25,7 @@ const SettingsPage = () => {
 						<button
 							key={t}
 							className={`group flex flex-col items-center gap-1.5 p-2 rounded-lg transition-colors ${
-								theme === t ? "bg-base-200" : "hover:bg-base-200/50"
+								theme === t ? "bg-base-300" : "hover:bg-base-100"
 							}`}
 							onClick={() => setTheme(t)}
 						>
@@ -37,14 +37,12 @@ const SettingsPage = () => {
 									<div className="rounded bg-neutral"></div>
 								</div>
 							</div>
-							<span className="text-[12px] font-medium truncate w-full text-center">
-								{t.charAt(0).toUpperCase() + t.slice(1)}
-							</span>
+							<span className="text-xs">{t.charAt(0).toUpperCase() + t.slice(1)}</span>
 						</button>
 					))}
 				</div>
 				{/* Preview Section */}
-				<div className="rounded-xl border border-base-300 overflow-hidden shadow-lg p-4 bg-base-200">
+				<div className="rounded-xl overflow-hidden shadow-md p-4 bg-base-300">
 					<h3 className="text-lg font-semibold mb-3">Preview</h3>
 					<div className="max-w-xl mx-auto bg-base-100 rounded-xl shadow-sm overflow-hidden">
 						{/* Chat Header */}
@@ -85,7 +83,7 @@ const SettingsPage = () => {
 						<div className="p-4 border-t border-base-300 bg-base-100 flex gap-2">
 							<input
 								type="text"
-								className="input input-bordered flex-1 text-sm h-10"
+								className="input input-bordered rounded-lg flex-1 text-sm h-10"
 								placeholder="Type a message..."
 								value="This is a preview"
 								readOnly
